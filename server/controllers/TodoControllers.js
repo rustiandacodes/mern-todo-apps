@@ -44,11 +44,14 @@ const deleteTodo = async (req, res) => {
 
 const updateTodo = async (req, res) => {
   const { id } = req.params;
-  const { title, description } = req.body;
 
   !mongoose.Types.ObjectId.isValid(id) ? res.status(404).json({ error: 'No Such a todo' }) : '';
 
-  const todo = await Todo.findOneAndUpdate(id, { title, description });
+  const todo = await Todo.findByIdAndUpdate({ _id: id }, { ...req.body });
+
+  !todo ? res.status(404).json({ error: 'No such a todo' }) : '';
+
+  res.status(200).json(todo);
 };
 
-module.exports = { getAllTodo, getTodo, createTodo, deleteTodo };
+module.exports = { getAllTodo, getTodo, createTodo, deleteTodo, updateTodo };
