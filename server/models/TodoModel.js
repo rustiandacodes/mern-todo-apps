@@ -12,7 +12,7 @@ const todoSchema = new Schema(
       required: true,
     },
   },
-  { timestaps: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model('Todo', todoSchema);

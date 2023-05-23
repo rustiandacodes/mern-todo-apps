@@ -6,3 +6,7 @@
   font-family: 'Montserrat', sans-serif;
   font-color: white;
 }
+
+body {
+  @apply bg-slate-100;
+}
