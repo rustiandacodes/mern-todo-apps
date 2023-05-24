@@ -20,13 +20,13 @@ const FormTodo = () => {
   };
 
   return (
-    <form className="w-full mb-20" onSubmit={handleSubmit}>
+    <form className=" mx-auto mb-20" onSubmit={handleSubmit}>
       <h3 className="text-2xl font-bold mb-10">Add New Todo</h3>
       <label className="mb-5 font-semibold">Title</label>
       <input
         type="text"
         value={title}
-        className="w-full rounded-lg my-5 p-3"
+        className="w-full rounded-lg my-5 p-3 mb-8 shadow-lg"
         onChange={(e) => {
           setTitle(e.target.value);
         }}
@@ -36,12 +36,14 @@ const FormTodo = () => {
       <textarea
         type="text"
         value={description}
-        className="w-full h-40 rounded-lg my-5 p-3"
+        className="w-full h-40 rounded-lg my-5 p-3 shadow-lg"
         onChange={(e) => {
           setDescription(e.target.value);
         }}
       />
-      <button className="w-full p-3 font-semibold text-white bg-teal-400 rounded-lg hover:opacity-80">Add Todo</button>
+      <div className="flex justify-end">
+        <button className="w-full lg:w-40 p-3 font-semibold text-white bg-teal-400 rounded-lg shadow-lg hover:opacity-80">Add Todo</button>
+      </div>
     </form>
   );
 };
