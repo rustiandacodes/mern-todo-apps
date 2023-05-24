@@ -39,7 +39,7 @@ const UpdateTodo = () => {
     response.ok ? navigate('/') : console.log(response(json.error));
   };
   return (
-    <form className="container md:w-[60%] w-[80%] mx-auto mb-20" onSubmit={handleSubmit}>
+    <form className="container mx-auto lg:w-[70%] w-[85%] py-10" onSubmit={handleSubmit}>
       <h3 className="text-2xl font-bold mb-10">Edit Todo</h3>
       <label className="mb-5 font-semibold">Title</label>
       <input
@@ -61,7 +61,7 @@ const UpdateTodo = () => {
         }}
       />
       <div className="flex gap-5">
-        <Link to={'/'} className="w-1/2 p-3 font-semibold text-center text-sky-400 border-2 border-sky-400 rounded-lg hover:opacity-80">
+        <Link to={'/'} className="w-1/2 p-3 font-semibold text-center text-teal-400 border-2 border-teal-400 rounded-lg hover:opacity-80">
           Back
         </Link>
         <button className="w-1/2 p-3 font-semibold text-white bg-teal-400 rounded-lg hover:opacity-80">Save</button>

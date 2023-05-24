@@ -2,9 +2,11 @@ import React from 'react';
 import { Trash2 } from 'react-feather';
 import { Edit } from 'react-feather';
 import { useNavigate } from 'react-router-dom';
+import { useTodosContext } from '../../hooks/useTodosContext';
 
 const TodoContent = ({ todo }) => {
   const navigate = useNavigate();
+  const { dispatch } = useTodosContext();
 
   const handleDelete = async () => {
     const response = await fetch('api/todo/' + todo._id, {
@@ -13,7 +15,7 @@ const TodoContent = ({ todo }) => {
     const json = await response.json();
 
     if (response.ok) {
-      console.log(json);
+      dispatch({ type: 'DELETE_TODOS', payload: json });
     }
   };
   return (
